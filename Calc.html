@@ -21,7 +21,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
         function append(_v){  　　　　//数字を足していく
             document.querySelector('input').value += _v
         }
-/*
+
         function calc(_v){            //計算する
             const v =document.querySelector('input').value
             const f =new.Function('return' + v)
@@ -29,30 +29,24 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
                 
         }
 
-
-
-
-
-*/
     </script>
 
 　<!-- ここでの数字は全て文字列か？ -->　
 　<!-- console.log(typeof 'blubber');-->　
 
 
-
-
 <button onclick ="append( '1' )">1</button>
 <button onclick ="append( '2' )">2</button>
 <button onclick ="append( '3' )">3</button>
 
-<!-- <button onclick ="append( '+' )">+</button> -->
+<button onclick ="append( '+' )">+</button>
 
-<!-- <button onclick ="append( '-' )">-</button> --><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
+<button onclick ="append( '-' )">-</button><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
 
 
 <button onclick ="update( '' )">CLEAR</button>
 
+<button onclick ="calc()">=</button>
 <!--console.log(typeof 'append');-->
 
 
