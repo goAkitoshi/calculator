@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>電卓</title>
+</head>
+<body>
+    <div>計算します</div>
+    <input>
+    <script>
+        function update(_v){         //初期状態に戻す　clear 
+            document.querySelector('input').value = _v
+        }
+
+        function append(_v){  　　　　//数字を足していく
+            document.querySelector('input').value += _v
+        }
+/*
+        function calc(_v){            //計算する
+            const v =document.querySelector('input').value
+            const f =new.Function('return' + v)
+            update(f().toString())
+                
+        }
+
+*/
+    </script>
+
+　<!-- ここでの数字は全て文字列か？ -->　
+　<!-- console.log(typeof 'blubber');-->　
+
+<button onclick ="append( '1' )">1</button>
+<button onclick ="append( '2' )">2</button>
+<!-- <button onclick ="append( '3' )">3</button> -->
+
+<!-- <button onclick ="append( '+' )">+</button> -->
+<!-- <button onclick ="append( '-' )">-</button> -->
+
+<button onclick ="update( '' )">CLEAR</button>
+
+<!--console.log(typeof 'append');-->
+
+
+<!-- 要素に関しては空白を埋めるように追加していく -->　
+</body>
+</html>
