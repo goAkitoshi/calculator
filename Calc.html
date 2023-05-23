@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<!--参考URL追記　
+https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
+-->
+
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +11,8 @@
 </head>
 <body>
     <div>計算します</div>
-    <input>
+    <input> 　<!-- 上記URLでは<input/>になっている。閉じタグ単独終了ははじめて見たし、
+        inputは閉じタグは必要ないと習ったので意味がわからない❓ -->　
     <script>
         function update(_v){         //初期状態に戻す　clear 
             document.querySelector('input').value = _v
@@ -19,12 +25,11 @@
         function calc(_v){            //計算する
             const v =document.querySelector('input').value
             const f =new.Function('return' + v)
-            update(f().toString())
+            update(f().toString())　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓
                 
         }
 
-参考URL追記　
-https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
+
 
 
 
@@ -42,7 +47,9 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 <button onclick ="append( '3' )">3</button>
 
 <!-- <button onclick ="append( '+' )">+</button> -->
-<!-- <button onclick ="append( '-' )">-</button> -->
+
+<!-- <button onclick ="append( '-' )">-</button> --><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
+
 
 <button onclick ="update( '' )">CLEAR</button>
 
