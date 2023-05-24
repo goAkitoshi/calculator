@@ -24,7 +24,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
         function calc(_v){            //計算する
             const v =document.querySelector('input').value
-            const f =new.Function('return' + v)
+            const f =new Function('return' + v)
             update(f().toString())　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓
                 
         }
