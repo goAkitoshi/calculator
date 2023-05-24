@@ -8,6 +8,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 <head>
     <meta charset="UTF-8">
     <title>電卓</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>計算させてください</div>
@@ -58,13 +59,15 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 <button onclick ="append( '9' )">9</button>
 <button onclick ="append( '0' )">0</button>
 
-<button onclick ="append( '+' )">+</button>
+<button onclick ="append( '+' )">＋</button>
 
-<button onclick ="append( '-' )">-</button><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
+<button onclick ="append( '-' )">－</button><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
+<button onclick ="append( '*' )">✖</button>
+<button onclick ="append( '/' )">÷</button>
 
 <button onclick ="calc()">=</button>
 
-<button onclick ="update( '' )">CLEAR</button>
+<button onclick ="update( '' )">C</button>
 
 
 <!--console.log(typeof 'append');-->
