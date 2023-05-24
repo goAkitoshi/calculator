@@ -14,13 +14,26 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
     <input> 　<!-- 上記URLでは<input/>になっている。閉じタグ単独終了ははじめて見たし、
         inputは閉じタグは必要ないと習ったので意味がわからない❓ -->　
     <script>
-        function update(_v){         //初期状態に戻す　clear 
+        function update(_v)
+        {         //初期状態に戻す　clear 
             document.querySelector('input').value = _v
         }
 
-        function append(_v){  　　　　//数字を足していく
+        function append(_v)
+        {  　　　　//数字を足していく
             document.querySelector('input').value += _v
         }
+
+        function calc()
+        {//計算する 1+3を入力すると
+            const v =document.querySelector('input').value
+            //console.log(v) //1+3
+            const f =new Function('return ' + v)
+            //console.log(f) //return 1+3
+            update( f().toString())　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
+        }
+
+        /*
 
         function calc() // 「＝」ボタンが押されたので計算する
     {
@@ -28,6 +41,9 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
         const f = new Function( 'return ' + v )
         update( f().toString() )
     }
+
+        */
+
     </script>
 
 　<!-- ここでの数字は全て文字列か？ -->　
@@ -45,7 +61,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
 <button onclick ="update( '' )">CLEAR</button>
 
-<button onclick="calc()" >=</button>
+<button onclick ="calc()">=</button>
 <!--console.log(typeof 'append');-->
 
 
