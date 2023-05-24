@@ -1,2 +1,2 @@
 # calculator
-電卓の初期
+windows標準搭載の電卓作り
