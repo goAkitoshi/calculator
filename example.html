@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html><body>
+    <div>Hello WebCalc!</div>
+    <input />
+    <script>
+    function update( _v ) // input tag を更新する関数
+    {
+        document.querySelector( 'input' ).value = _v
+    }
+
+    function append( _v ) // 数字ボタンが押されたので数字を後ろに追加する
+    {
+        document.querySelector( 'input' ).value += _v
+    }
+    </script>
+    <button onclick="append( '1' )" >1</button>
+    <button onclick="append( '2' )" >2</button>
+
+    <button onclick="update( '' ) " >CLR</button>
+</body></html>
