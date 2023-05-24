@@ -12,7 +12,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 </head>
 <body>
     <div>計算させてください</div>
-    <input> 　<!-- 上記URLでは<input/>になっている。閉じタグ単独終了ははじめて見たし、inputは閉じタグは必要ないと習ったので意味がわからない❓ -->　
+    <input/><br />
         
     <script>
         function update(_v)
@@ -48,26 +48,28 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
     </script>
 
 
-<button onclick ="append( '1' )">1</button>
-<button onclick ="append( '2' )">2</button>
-<button onclick ="append( '3' )">3</button>
-<button onclick ="append( '4' )">4</button>
-<button onclick ="append( '5' )">5</button>
-<button onclick ="append( '6' )">6</button>
 <button onclick ="append( '7' )">7</button>
 <button onclick ="append( '8' )">8</button>
 <button onclick ="append( '9' )">9</button>
-<button onclick ="append( '0' )">0</button>
+<button onclick ="append( '/' )">÷</button><br />
 
-<button onclick ="append( '+' )">＋</button>
+<button onclick ="append( '4' )">4</button>
+<button onclick ="append( '5' )">5</button>
+<button onclick ="append( '6' )">6</button>
+<button onclick ="append( '*' )">✖</button><br />
 
-<button onclick ="append( '-' )">－</button><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
-<button onclick ="append( '*' )">✖</button>
-<button onclick ="append( '/' )">÷</button>
-
-<button onclick ="calc()">=</button>
+<button onclick ="append( '1' )">1</button>
+<button onclick ="append( '2' )">2</button>
+<button onclick ="append( '3' )">3</button>
+<button onclick ="append( '-' )">－</button><br /><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
 
 <button onclick ="update( '' )">C</button>
+<button onclick ="append( '0' )">0</button>
+<button onclick ="calc()">=</button>
+<button onclick ="append( '+' )">＋</button><br />
+
+
+
 
 
 <!--console.log(typeof 'append');-->
