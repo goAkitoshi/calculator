@@ -1,4 +1,8 @@
-
+input {
+    font-size: 18px;
+    text-align: right;
+    margin-bottom: 1px;
+}
 
 button {
     width: 50px;
