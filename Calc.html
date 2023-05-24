@@ -22,13 +22,12 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
             document.querySelector('input').value += _v
         }
 
-        function calc(_v){            //計算する
-            const v =document.querySelector('input').value
-            const f =new Function('return' + v)
-            update(f().toString())　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓
-                
-        }
-
+        function calc() // 「＝」ボタンが押されたので計算する
+    {
+        const v = document.querySelector( 'input' ).value
+        const f = new Function( 'return ' + v )
+        update( f().toString() )
+    }
     </script>
 
 　<!-- ここでの数字は全て文字列か？ -->　
@@ -46,7 +45,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
 <button onclick ="update( '' )">CLEAR</button>
 
-<button onclick ="calc()">=</button>
+<button onclick="calc()" >=</button>
 <!--console.log(typeof 'append');-->
 
 
