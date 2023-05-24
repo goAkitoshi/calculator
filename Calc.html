@@ -17,28 +17,36 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
     <script>
         function update(_v)
         {         //初期状態に戻す　clear 
-            document.querySelector('input').value = _v
+            document.querySelector('input').value = _v;
         }
 
         function append(_v)
         {  　　　　//数字を足していく
-            document.querySelector('input').value += _v
+            //document.querySelector('input').value += _v;
+            const inputField = document.querySelector('input');
+            const lastChar = inputField.value.slice(-1); // 最後の文字を取得
+
+            // 最後の文字が四則演算の記号かチェックする
+            if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '/')
+                return; // 最後の文字が四則演算だったらappendしない
+
+            inputField.value += _v;
         }
 
         function calc()
         {//計算する 1+3を入力すると
-            const v =document.querySelector('input').value
-            //console.log(v) //1+3
-            const f =new Function('return ' + v)
-            //console.log(f) //return 1+3
-            update( f().toString())　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
+            const v =document.querySelector('input').value;
+            //console.log(v); //1+3
+            const f =new Function('return ' + v);
+            //console.log(f); //return 1+3
+            update( f().toString());　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
         }
 
         /*
 
         function calc() // 「＝」ボタンが押されたので計算する
     {
-        const v = document.querySelector( 'input' ).value
+        const v = document.querySelector( 'input' ).value;
         const f = new Function( 'return ' + v )
         update( f().toString() )
     }
@@ -75,21 +83,11 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 <!--console.log(typeof 'append');-->
 <!-- 1～0の数字は文字列か？ -->
 
-<!--
-    まずは余計なことは考えずに、期限内に完成することを優先する
-     数字は順番はを入れ替えるか
-     空白のなかに3*3とかで行列を作るか
-     空白を埋めるスクリプトを書くか
-     rightとかleftとかあった
-     クリアを押したときに0
-    -->
 
 
     <!--
     ・四則演算をinputタグ内に表示しない方法
     ・計算した後にクリアにならない
-    ・四則演算はどれかひとつにする
-    ・デフォルト値0
     ・1000ずつ，
     ・スベースの数字と連動
     052とかにさせない
