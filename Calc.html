@@ -24,6 +24,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
         function append(_v)
         {  　　　　//数字を足していく
             document.querySelector('input').value += _v;
+            // parseInt(_v)
             // const inputField = document.querySelector('input');
             // const lastChar = inputField.value.slice(-1); // 最後の文字を取得
 
@@ -36,11 +37,14 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
         function calc()
         {//計算する 1+3を入力すると
-            const v =document.querySelector('input').value;
-            console.log(v); //1+3
-            const f =new Function('return ' + v);
-            console.log(f); //return 1+3
+            // const v =document.querySelector('input').value;
+            const v =document.querySelector('input').value
+            // console.log(v); //1+3
+            const f =new Function('return ' + parseInt(v));
+            // console.log(f); //return 1+3
             update( f().toString());　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
+            update( f());　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
+            // update( f().parseInt());　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
         }
 
         /*
@@ -51,6 +55,13 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
         const f = new Function( 'return ' + v )
         update( f().toString() )
     }
+
+    関数部分を加えて、onclick時のイベントを関数を変えるしかないと思う
+    javascript
+    https://nyanblog2222.com/programming/javascript/4496/
+
+    typescript
+    https://github.com/BeeBow6/typescript-calculator/tree/master/src
 
         */
 
@@ -72,6 +83,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 <button onclick ="append( '3' )">3</button>
 <button onclick ="append( '-' )">－</button><br /><!-- append関数が+=なのにマイナスを入れてなぜマイナスになるのか❓ -->
 
+<!-- <button onclick ="update( '0' )">C</button> -->
 <button onclick ="update( '' )">C</button>
 <button onclick ="append( '0' )">0</button>
 <button onclick ="calc()" id="clear">=</button>
@@ -95,7 +107,6 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
     ・はじめの初期値を0にする
     ・四則演算の重複をなくす
     ・C（クリア）を押すと0になるようにする
-
      -->　
 
 
