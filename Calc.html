@@ -12,34 +12,45 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 </head>
 <body>
     <div>計算させてください</div>
-    <input value=0><br />
-    <!-- <input/><br /> -->
+    <!-- <input value=0><br /> -->
+    <input><br />
         
     <script>
         function update(_v)
-        {         //初期状態に戻す　clear 
-            document.querySelector('input').value = _v;
+        {        if(_v === '')
+            {
+                document.querySelector('input').value = "0";
+            } else 
+            {
+                document.querySelector('input').value = _v;
+            }
+        
+           
         }
 
-        function append(_v)
-        {  　　　　//数字を足していく
-            document.querySelector('input').value += _v;
-            // const inputField = document.querySelector('input');
-            // const lastChar = inputField.value.slice(-1); // 最後の文字を取得
-
-            // 最後の文字が四則演算の記号かチェックする
-            // if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '/')
-            //     return; // 最後の文字が四則演算だったらappendしない
-
-            // inputField.value += _v;
+        function append(_v)   //数字を足していく
+        {
+            const inputField = document.querySelector('input');
+            const currentValue = inputField.value;
+            const lastChar = currentValue[currentValue.length - 1];
+            
+            if (currentValue === "0" && !isNaN(_v)) {
+                inputField.value = _v;
+            } else if (isNaN(lastChar) && isNaN(_v)) {
+                // 最後の文字と現在追加しようとしている文字が両方とも数字ではない場合
+                // 最後の文字を新しい文字に置き換える
+                inputField.value = currentValue.slice(0, -1) + _v;
+            } else {
+                inputField.value += _v;
+            }
         }
 
         function calc()
         {//計算する 1+3を入力すると
             const v =document.querySelector('input').value;
-            console.log(v); //1+3
+            // console.log(v); //1+3
             const f =new Function('return ' + v);
-            console.log(f); //return 1+3
+            // console.log(f); //return 1+3
             update( f().toString());　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
         }
 
