@@ -29,11 +29,12 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
             // 最後の文字が四則演算の記号かチェックする
             if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '/')
                 return; // 最後の文字が四則演算だったらappendしない
+                
+            inputField.value += _v;   
+}
 
-            inputField.value += _v;
-        }
 
-        function calc()
+        function calc() // 「＝」ボタンが押されたので計算する
         {//計算する 1+3を入力すると
             const v =document.querySelector('input').value;
             //console.log(v); //1+3
@@ -42,16 +43,6 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
             update( f().toString());　// なぜ文字列に変換するのかがわからない　整数同士の計算ではないのか❓              
         }
 
-        /*
-
-        function calc() // 「＝」ボタンが押されたので計算する
-    {
-        const v = document.querySelector( 'input' ).value;
-        const f = new Function( 'return ' + v )
-        update( f().toString() )
-    }
-
-        */
 
     </script>
 
@@ -86,7 +77,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
 
     <!--
-    ・四則演算をinputタグ内に表示しない方法
+    ・四則演算子をinputタグ内に表示しない方法
     ・計算した後にクリアにならない
     ・1000ずつ，
     ・スベースの数字と連動
