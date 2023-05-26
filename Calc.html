@@ -54,11 +54,16 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
             try 
             {
                 const f =new Function('return ' + v);
-            // console.log(f); //return 1+3
-                update( f());　
-            } catch(_error)
+                const result = f();
+                if (result === Infinity || isNaN(result)) {
+                    throw new Error("計算エラー");
+                } else if (result === Infinity) {
+                    throw new Error("0で除算が発生しました");
+                }
+                update(result);　
+            } catch(error)
             {
-                update( _error) // 計算に失敗した場合は、そのエラーの内容を表示する
+                update(error.message); // 計算に失敗した場合は、そのエラーの内容を表示する
             }
               
             // document.querySelector('input').value.r12eset();    
@@ -105,13 +110,7 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
 
     <!--
-        1.四則演算をinputタグ内に表示しない方法
-        2.計算した後、次の文字を入力する際、クリアにならない　reset()
-        3.1000ずつ,(コンマ)で区切る　ex12,345　toLocaleString()
-        4.try catchを使用する　0で割ることはできません など　はじめの参考URLにあった　安全のためにも実装する
-        5.一文字削除
 
-全て修正したいですが、優先度は2
     -->
 
 </body>
