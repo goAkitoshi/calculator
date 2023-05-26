@@ -22,8 +22,12 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
                     document.querySelector('input').value = 0;
             }   else 
             {
-                    document.querySelector('input').value = _v;
+                    document.querySelector('input').value = formatNumber(_v);
             }           
+        }
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
         function append(_v)   //数字を足していく
@@ -55,7 +59,8 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
             {
                 const f =new Function('return ' + v);
             // console.log(f); //return 1+3
-                update( f());　
+                // update( f().toString() );　
+                // console.log(typeof(f().toString()));
             } catch(_error)
             {
                 update( _error) // 計算に失敗した場合は、そのエラーの内容を表示する
