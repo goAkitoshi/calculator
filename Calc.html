@@ -76,9 +76,6 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
         });
 
 
-        //toLocaleString();を使用して,を作る
-        //計算後のリセットはreset();で
-
 
     </script>
 
@@ -113,6 +110,16 @@ https://qiita.com/yamazaki3104/items/b5351f589fb6644bf910
 
 全て修正したいですが、優先度は2
     -->
+
+            <!--
+        toLocaleString();を使用して,を作る　計算の挙動がおかしくなる原因の推察について
+        toLocaleString()を使用すると文字列になるので整数と文字列の計算になりおかしくなった
+        update( f())などのはじめのころのtoStringメソッドの復活　最終的に文字列にする
+        toStringメソッドにしてたのはカンマ区切りも考えてのことかもしれない
+        もしくはカンマを数字として認識しているかの可能性がある
+        計算後のリセットはreset();で
+        
+        -->
 
 </body>
 </html>
